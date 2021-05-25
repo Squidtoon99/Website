@@ -1,5 +1,4 @@
-import Link from "next/Link";
-import Head from "next/Head";
+import Head from "next/head";
 import Layout from "../../components/layout";
 
 export default function FirstPost() {

@@ -1,8 +1,8 @@
-import Head from "next/Head";
-import Image from "next/Image";
+import Head from "next/head";
+import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 
 const name = "Squidtoon99";
 export const siteTitle = "Squidtoon99's Bio";
