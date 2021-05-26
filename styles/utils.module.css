@@ -52,10 +52,14 @@
 }
 
 .buttonSVG {
-  @apply w-11 h-auto;
+  @apply w-14 h-auto;
   @apply border-blue border font-bold uppercase text-xs px-4 py-2 rounded shadow focus:outline-none mr-1 mb-1;
 }
 
 .buttonSVG:hover {
+  background: -webkit-linear-gradient(135deg, #c63c24, #2e5995);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   @apply border-red ease-linear transition-all duration-500;
 }
