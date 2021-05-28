@@ -6,15 +6,19 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
+  function scroll_down() {
+    document.getElementById("scroll-container").scrollTop =
+      document.getElementById("data").offsetTop;
+  }
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section className={`${utilStyles.headingMd} pb-64`}>
         <br />
         <div className="grid flex justify-center">
-          <div className="row-span-3">
+          <div className="">
             <Link href="https://github.com/Squidtoon99">
               <button className={utilStyles.buttonSVG} type="button">
                 <svg
@@ -26,7 +30,7 @@ export default function Home({ allPostsData }) {
                 </svg>
               </button>
             </Link>
-            <Link href="https://discordapp.com/channels/@me/619284841187246090/">
+            <Link href="https://discordapp.com/users/278877624212783105/">
               <button className={utilStyles.buttonSVG} type="button">
                 <svg
                   role="img"
@@ -72,17 +76,27 @@ export default function Home({ allPostsData }) {
               </button>
             </Link>
           </div>
+          <button
+            className="content-center align-text-bottom pt-10"
+            onClick={scroll_down}
+          >
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              className="fill-current text-white animate-bounce mx-auto"
+            >
+              <path d="M0 3l12 18 12-18h-24zm12 16.197l-10.132-15.197h20.263l-10.131 15.197" />
+            </svg>
+          </button>
         </div>
-        <br />
-        <br />
-        <p>
-          There's lots of cool things here! In the meantime check out the{" "}
-          <Link href="/posts/first-post">
-            <a>blog post</a>
-          </Link>
-        </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section
+        id="data"
+        className={`${utilStyles.headingMd} ${utilStyles.padding1px} pb-16`}
+      >
         <h2 className={utilStyles.headingLg}>Recent Projects</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (

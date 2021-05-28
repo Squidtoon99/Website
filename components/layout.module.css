@@ -1,14 +1,12 @@
 .container {
-  max-width: 36rem;
-  padding: 0 1rem;
+  max-width: 50rem;
+  padding: 1rem 1rem;
   margin: 3rem auto 6rem;
+  @apply shadow-2xl;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: -webkit-linear-gradient(135deg, #c63c24, #2e5995);
+  background: linear-gradient(135deg, #f5be1d, #c63c24);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16,4 +14,15 @@
 
 .backToHome {
   margin: 3rem 0 0;
+  padding: 1rem 0;
+}
+
+.scroller {
+  overflow: auto;
+  @apply h-screen;
+}
+
+.scroller::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }

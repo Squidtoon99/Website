@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Header() {
+export default function Header({}) {
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800 transform">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -22,9 +23,9 @@ export default function Header() {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
@@ -37,33 +38,25 @@ export default function Header() {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
           <div className="flex-1 flex items-center justify-left">
-            <div className="">
-              <Image
-                src="/images/squid.png"
-                alt="squid"
-                width="50%"
-                height="50%"
-                className="shadow rounded-ful max-w-full h-auto align-middle border-none" // just an example
-              />
-            </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                  aria-current="page"
-                >
-                  Dashboard
-                </a>
+                <Link href="/friskytool-stats">
+                  <a
+                    className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    aria-current="page"
+                  >
+                    Analytics
+                  </a>
+                </Link>
 
                 <a
                   href="#"

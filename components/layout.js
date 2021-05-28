@@ -10,11 +10,31 @@ export const siteTitle = "Squidtoon99's Bio";
 
 export default function Layout({ children, home }) {
   return (
-    <div>
+    <div
+      style={
+        home
+          ? {
+              backgroundImage:
+                "url(" +
+                `${require("../public/images/backgroundsquid.png")}` +
+                ")",
+              width: "100%",
+              height: "100vh",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              className: "bg-cover",
+            }
+          : {}
+      }
+    >
       <Header />
-      <div className={styles.container}>
+      <div
+        id="scroll-container"
+        className={`${styles.container} overflow-y-auto`}
+        style={{ height: "80vh" }}
+      >
         <Head>
-          <link rel="icon" href="/favicono.ico" />
+          <link rel="icon" href="/favicon.ico" />
           <meta name="description" content="My first website in next.js" />
           <meta
             property="og:image"
@@ -24,20 +44,28 @@ export default function Layout({ children, home }) {
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
 
-        <header className={styles.header}>
+        <header>
           {home ? (
             <>
-              <div className="h-32 w-32 relative">
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  alt={name}
-                  layout="fill" // required
-                  objectFit="cover" // change to suit your needs
-                  className="rounded-full" // just an example
-                />
-              </div>
-              <h1 className={`text-5xl ${styles.header}`}>{name}</h1>
+              <section
+                className=" container flex items-center justify-center"
+                style={{ width: "100%", height: "100%" }}
+              >
+                <div className="lg:h-32 lg:w-32 sm:h-16 sm:w-16 md:h-20 md:w-20 relative object-left flex-row">
+                  <Image
+                    priority
+                    src="/images/profile.jpg"
+                    alt={name}
+                    layout="fill" // required
+                    objectFit="cover" // change to suit your needs
+                    className="rounded-full " // just an example
+                  />
+                </div>
+                <br />
+                <p className="hero-title text-white md:pl-8 text-5xl">
+                  Hello, I'm <span className={styles.header}> {name}</span>
+                </p>
+              </section>
             </>
           ) : (
             <>
