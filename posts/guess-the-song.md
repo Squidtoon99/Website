@@ -7,4 +7,7 @@ date: "2021-08-10"
 
 After adding a selection of songs through the !add command you can start the game with !play and it will randomly queue and pick a song to choose from.
 
-The bot currently uses lavaplayer + java to play music.
+![](https://squid.gay/dzD3mS4O.png)
+
+Heading level 1
+===============
