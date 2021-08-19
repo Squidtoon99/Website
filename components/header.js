@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
-export default function Header({}) {
+export default function Header({ }) {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
+
   return (
     <nav className="bg-gray-800 transform">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -12,6 +15,7 @@ export default function Header({}) {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
+              onClick={() => setNavbarOpen(!navbarOpen)}
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -49,70 +53,61 @@ export default function Header({}) {
           <div className="flex-1 flex items-center justify-left">
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Link href="/friskytool-stats">
+                <Link href="/">
                   <a
                     className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                     aria-current="page"
                   >
+                    Home
+                  </a>
+                </Link>
+                <Link href="/friskytool-stats">
+                    <a
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
                     Analytics
                   </a>
                 </Link>
-
-                <a
-                  href="#"
+                <Link href="/posts">
+                  <a
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Team
+                  Posts
                 </a>
+                  </Link>
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </a>
+                
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="sm:hidden" id="mobile-menu">
+      <div className={"sm:hidden " + (navbarOpen ? "flex" : "hidden")} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <a
-            href="#"
+            href="/"
             className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
             aria-current="page"
           >
-            Dashboard
+            Home
           </a>
 
           <a
-            href="#"
+            href="/friskytool-stats"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            Team
+            Analytics
           </a>
 
           <a
-            href="#"
+            href="/posts"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            Projects
+            Posts
           </a>
 
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Calendar
-          </a>
+          
         </div>
       </div>
     </nav>
