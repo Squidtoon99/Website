@@ -80,8 +80,8 @@ export default function Layout({ children, home }) {
         <main>{children}</main>
         {!home && (
           <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
+            <Link href="/posts">
+              <a>← Back to posts</a>
             </Link>
           </div>
         )}
