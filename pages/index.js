@@ -96,7 +96,7 @@ export default function Home({ allPostsData }) {
       <section
         id="data"
         className={`${utilStyles.headingMd} ${utilStyles.padding1px} pb-16`}
-      >
+      > 
         <h2 className={utilStyles.headingLg}>Recent Projects</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -117,7 +117,7 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData().slice(0, 3);
   return {
     props: { allPostsData },
   };
