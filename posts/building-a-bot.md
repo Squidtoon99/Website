@@ -13,7 +13,7 @@ Head over to the <a href="https://discord.com/developers/applications" target="_
 
 ![](https://squid.gay/XSISFQie.png)
 <br>
-You will be greeted with an empty page of applications and a beg blue "new application" button in the top right corner. Click that button.
+You will be greeted with an empty page of applications and a big blue "new application" button in the top right corner. Click that button.
 <br>
 ![](https://squid.gay/2FZf5DwQ.png)
 <br>
