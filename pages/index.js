@@ -7,8 +7,7 @@ import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
   function scroll_down() {
-    document.getElementById("scroll-container").scrollTop =
-      document.getElementById("data").offsetTop;
+    document.getElementById("data").scrollIntoView(false);
   }
   return (
     <Layout home>
@@ -96,7 +95,7 @@ export default function Home({ allPostsData }) {
       <section
         id="data"
         className={`${utilStyles.headingMd} ${utilStyles.padding1px} pb-16`}
-      > 
+      >
         <h2 className={utilStyles.headingLg}>Recent Projects</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
