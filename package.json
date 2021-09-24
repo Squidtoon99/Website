@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.7.6",
     "date-fns": "^2.21.3",
     "gray-matter": "^4.0.3",
     "isomorphic-unfetch": "^3.1.0",
