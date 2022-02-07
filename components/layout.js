@@ -52,14 +52,7 @@ export default function Layout({ children, home }) {
                 style={{ width: "100%", height: "100%" }}
               >
                 <div className="lg:h-32 lg:w-32 sm:h-16 sm:w-16 md:h-20 md:w-20 relative object-left flex-row">
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    alt={name}
-                    layout="fill" // required
-                    objectFit="cover" // change to suit your needs
-                    className="rounded-full " // just an example
-                  />
+                 <img src=require("/images/profile.jpg") className="rounded-full" />
                 </div>
                 <br />
                 <p className="hero-title text-white md:pl-8 text-5xl">
